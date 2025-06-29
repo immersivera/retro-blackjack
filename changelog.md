@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0] - 2025-01-10
+
+### Added
+- Bolt logo floating in bottom right corner
+- Hover tooltip showing "Powered by Bolt"
+- Smooth animations and transitions for logo interactions
+
+### Enhanced
+- Logo appears on all screens (setup and game)
+- Professional branding integration
+- Responsive design maintained
+
 ## [1.0.0] - 2025-01-10
 
 ### Added

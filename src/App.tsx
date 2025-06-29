@@ -14,6 +14,7 @@ import DealerHand from './components/DealerHand';
 import PlayerHand from './components/PlayerHand';
 import GameControls from './components/GameControls';
 import Leaderboard from './components/Leaderboard';
+import BoltLogo from './components/BoltLogo';
 
 function App() {
   const [gameState, setGameState] = useState<GameState | null>(null);
@@ -211,7 +212,12 @@ function App() {
   }, [gameState?.gamePhase, playDealerTurn]);
 
   if (!gameState) {
-    return <PlayerSetup onStartGame={startGame} />;
+    return (
+      <>
+        <PlayerSetup onStartGame={startGame} />
+        <BoltLogo />
+      </>
+    );
   }
 
   return (
@@ -287,6 +293,9 @@ function App() {
           onClose={() => setShowLeaderboard(false)}
         />
       )}
+
+      {/* Bolt Logo */}
+      <BoltLogo />
     </div>
   );
 }
