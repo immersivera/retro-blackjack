@@ -6,7 +6,7 @@ interface PlayerSetupProps {
 }
 
 const PlayerSetup: React.FC<PlayerSetupProps> = ({ onStartGame }) => {
-  const [playerNames, setPlayerNames] = useState<string[]>(['', '']);
+  const [playerNames, setPlayerNames] = useState<string[]>(['']);
   const [errors, setErrors] = useState<string[]>([]);
 
   const addPlayer = () => {
@@ -17,7 +17,7 @@ const PlayerSetup: React.FC<PlayerSetupProps> = ({ onStartGame }) => {
   };
 
   const removePlayer = (index: number) => {
-    if (playerNames.length > 2) {
+    if (playerNames.length > 1) {
       const newNames = playerNames.filter((_, i) => i !== index);
       const newErrors = errors.filter((_, i) => i !== index);
       setPlayerNames(newNames);
@@ -92,7 +92,7 @@ const PlayerSetup: React.FC<PlayerSetupProps> = ({ onStartGame }) => {
                     <p className="text-red-400 text-sm mt-1">{errors[index]}</p>
                   )}
                 </div>
-                {playerNames.length > 2 && (
+                {playerNames.length > 1 && (
                   <button
                     onClick={() => removePlayer(index)}
                     className="px-3 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200"
@@ -131,7 +131,7 @@ const PlayerSetup: React.FC<PlayerSetupProps> = ({ onStartGame }) => {
         </div>
 
         <div className="mt-6 text-center text-gray-400 text-sm">
-          <p>2-4 players • No sign up required</p>
+          <p>1-4 players • No sign up required</p>
         </div>
       </div>
     </div>
